@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "dl-energetic-impact-analysis"
+version = "0.1.0"
+description = "Replication package for the master thesis \"An analysis of modeling and training decisions for greener computer vision systems\""
+authors = ["Santiago del Rey <santiago.del.rey@upc.edu>"]
+readme = "README.md"
+license = "MIT"
+packages = [{ include = "dl_energetic_impact_analysis" }]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.11"
+numpy = "^1.24.1"
+pandas = "^1.5.2"
+fastparquet = "^2022.12.0"
+pyarrow = "^10.0.1"
+matplotlib = "^3.6.3"
+seaborn = "^0.12.2"
+scikit-learn = "^1.2.0"
+scikit-posthocs = "^0.7.0"
+statsmodels = "^0.13.5"
+jupyter = "^1.0.0"
+cliffs-delta = "^1.0.0"
+
+[tool.isort]
+profile = "black"
+
+[tool.poetry.group.dev.dependencies]
+black = { extras = ["jupyter"], version = "^22.12.0" }
+isort = "^5.11.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
