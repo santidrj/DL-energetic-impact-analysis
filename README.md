@@ -14,10 +14,18 @@ All the files inside the `data` folder have been saved using Panda's ``to_parque
 
 ### DL Training Profiling Dataset
 
-The DL Training Profiling dataset contains all the energy-related measurements taken during the training of the models
+The DL Training Profiling Dataset contains all the energy-related measurements taken during the training of the models
 tested in the study.
 
 You will find a detailed description of the dataset in its [dataset card](data/raw/dataset_card.md).
+
+### DL Training Energy Consumption Dataset
+
+The DL Training Energy Consumption Dataset contains all the energy-related measurements taken during the training of the
+models
+tested in the study together with their prediction quality.
+
+You will find a detailed description of the dataset in its [dataset card](data/processed/dataset_card.md).
 
 ## Data analysis
 
