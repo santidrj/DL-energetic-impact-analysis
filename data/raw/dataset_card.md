@@ -69,8 +69,7 @@ the timestamp of the measurement, and the profiled data.
   "gpu_power_draw":118.0,
   "gpu_temperature":55,
   "cpu_usage":3.5869998932,
-  "memory_usage":12234.05078125,
-  "cpu_temperature":32.0}
+  "memory_usage":12234.05078125}
 ```
 
 ### Data Fields
