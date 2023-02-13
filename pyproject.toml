@@ -20,6 +20,7 @@ scikit-posthocs = "^0.7.0"
 statsmodels = "^0.13.5"
 jupyter = "^1.0.0"
 cliffs-delta = "^1.0.0"
+pingouin = "^0.5.3"
 
 [tool.isort]
 profile = "black"
