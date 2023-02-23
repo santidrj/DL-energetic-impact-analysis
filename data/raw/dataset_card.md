@@ -37,9 +37,8 @@
 
 The DL Training Profiling Dataset is an English-language dataset containing just over 1M
 measurements of energy-related metrics of the Deep Learning model's training. The data correspond to training three
-different
-models using two different training strategies (i.e., Local and Cloud). We have trained each model 30 times for each
-training strategy.
+different models using two different training strategies (i.e., Local and Cloud). We have trained each model 30 times
+for each training strategy.
 
 ### Supported Tasks and Leaderboards
 
@@ -61,13 +60,15 @@ the timestamp of the measurement, and the profiled data.
 {"train_strategy":"cloud",
   "architecture":"mobilenet_v2",
   "run":0,
-  "timestamp":1670234145538,
-  "gpu_usage":0.0,
+  "timestamp": 1670234145538,
+  "gpu_name": "NVIDIA GeForce RTX 3090",
+  "gpu_usage": 0.0,
   "gpu_memory_usage":0.0,
   "gpu_total_memory":24268,
   "gpu_memory_used":23573,
-  "gpu_power_draw":118.0,
-  "gpu_temperature":55,
+  "gpu_power_draw": 118.0,
+  "gpu_max_power": 350.0,
+  "gpu_temperature": 55,
   "cpu_usage":3.5869998932,
   "memory_usage":12234.05078125}
 ```
@@ -82,6 +83,7 @@ the timestamp of the measurement, and the profiled data.
 - `architecture`: The architecture defining the DNN. It can be _mobilenet_v2_, _nasnet_mobile_, or _xception_.
 - `run`: The run number out of the 30 repetitions.
 - `timestamp`: The timestamp of the measured metrics.
+- `gpu_name`: The GPU model name.
 - `gpu_usage`: The percentage of GPU used according to
   the [nvidia-smi](https://developer.download.nvidia.com/compute/DCGM/docs/nvidia-smi-367.38.pdf) definition.
 - `gpu_memory_usage`: The percentage of GPU memory according to
@@ -89,6 +91,8 @@ the timestamp of the measurement, and the profiled data.
 - `gpu_total_memory`: The total memory of the GPU in MegaBytes.
 - `gpu_memory_used`: The GPU memory used in MegaBytes.
 - `gpu_power_draw`: The power consumed by the GPU in Watts.
+- `gpu_max_power`: The maximum value in watts that power limit can be set to. In other words, the Graphics Card Power (
+  GCP).
 - `gpu_temperature`: The GPU temperature in Celsius.
 - `cpu_usage`: The percentage of CPU used according to
   the [psutil](https://psutil.readthedocs.io/en/latest/#psutil.cpu_percent)
@@ -104,8 +108,7 @@ The dataset does not contain any data split.
 ### Curation Rationale
 
 The DL Training Profiling Dataset was created to allow researchers to study the effects of the model architecture and
-training
-strategy on training energy efficiency.
+training strategy on training energy efficiency.
 
 ### Source Data
 
@@ -113,8 +116,8 @@ strategy on training energy efficiency.
 
 The data consists of the measurements taken by profiling the GPU, CPU, and RAM during the training of multiple DL models
 in two different training strategies. The training process was repeated 30 times for each of the DL models in both
-training
-strategies, except for the _xception_ model that was only trained with the _cloud_ strategy due to hardware limitations
+training strategies, except for the _xception_ model that was only trained with the _cloud_ strategy due to hardware
+limitations
 on the _local_ strategy.
 
 The data corresponds to the raw measurements. The only processing performed has been the integration of the GPU
@@ -146,8 +149,8 @@ The dataset does not contain any personal or sensitive information.
 
 The purpose of this dataset is to help develop models that are energy efficient and make better use of the
 available resources. By understanding how modeling and training decisions can affect the final training energy
-efficiency
-of DL projects, we can reduce their carbon footprint. Moreover, by reducing the energy requirements of DL training,
+efficiency of DL projects, we can reduce their carbon footprint. Moreover, by reducing the energy requirements of DL
+training,
 we make this task more affordable for limited budgets.
 
 ### Discussion of Biases

@@ -65,6 +65,7 @@ model prediction quality metrics.
   "architecture": "mobilenet_v2",
   "run": 0,
   "training duration (h)": 0.7350283333,
+  "gpu model": "NVIDIA GeForce RTX 3090",
   "gpu working time (h)": 0.1689055556,
   "gpu usage": 0.2299773071,
   "gpu memory working time (h)": 0.0616944444,
@@ -72,10 +73,14 @@ model prediction quality metrics.
   "average memory used (MB)": 23648.7526475038,
   "memory used std (MB)": 24.9827956804,
   "total power (W)": 414928.0,
+  "max power limit (W)": 350.0,
   "average temperature (Celsius)": 54.269667171,
   "temperature std (Celsius)": 1.8318169329,
   "energy (GJ)": 1.0979418107,
   "emissions (tCO2e)": 0.0707563066,
+  "split number": 0,
+  "training size": 23807,
+  "validation size": 10203,
   "GFLOPs": 0.06402816,
   "accuracy": 0.9756289124,
   "precision": 0.9598264694,
@@ -88,23 +93,27 @@ model prediction quality metrics.
 
 - `train_strategy`: The type of machine used to train the DNN. It can be _local_ or _cloud_. The former represents
   training in low to medium-end GPUs such as personal computers. The latter represents training in high-end settings
-  such
-  as
-  the ones offered by AWS, Azure, etc.
+  such as the ones offered by AWS, Azure, etc.
 - `architecture`: The architecture defining the DNN. It can be _mobilenet_v2_, _nasnet_mobile_, or _xception_.
 - `run`: The run number out of the 30 repetitions.
 - `training duration (h)`: The amount time, in hours, it took to train the DNN.
+- `gpu model`: The GPU model name.
 - `gpu working time (h)`: The amount of time, in hours, the GPU was doing any computation during training.
 - `gpu usage`: The percentage of GPU usage with respect to training duration.
 - `gpu memory working time (h)`: The amount of time, in hours, the GPU memory was doing any operation during training.
 - `gpu memory usage`: The percentage of GPU memory usage with respect to training duration.
 - `average memory used (MB)`: The average GPU memory usage in Megabytes.
 - `std memory used (MB)`: The standard deviation of the GPU memory usage in Megabytes.
-- total power (W): The total power consumed by the GPU in Watts.
+- `total power (W)`: The total power consumed by the GPU in Watts.
+- `max power limit (W)`: The maximum value in watts that power limit can be set to. In other words, the Graphics Card
+  Power (GCP).
 - `average temperature (Celsius)`: The average GPU temperature in Celsius.
 - `temperature std (Celsius)`: The standard deviation of the GPU temperature in Celsius.
 - `energy (GJ)`: The total energy consumed by the GPU in GigaJoules.
 - `emissions (tCO2e)`: The total Greenhouse Gas (GHG) emissions produced in tons of CO<sub>2</sub>e.
+- `split number`: The data split used to make the train/validation splits.
+- `training size`: The number of training samples used before batching.
+- `validation size`: The number of validation samples used before batching.
 - `GFLOPs`: Number of Floating Point Operations required to perform a forward pass on the DNN.
 - `accuracy`: The accuracy of the DNN in the validation set.
 - `precision`: The precision of the DNN in the validation set.
@@ -120,8 +129,8 @@ The dataset does not contain any data split.
 ### Curation Rationale
 
 The DL Training Energy Consumption Dataset was created to allow researchers to study the effects of the model
-architecture and
-training strategy on training energy efficiency. It was also created to study the trade-off between training energy
+architecture and training strategy on training energy efficiency. It was also created to study the trade-off between
+training energy
 efficiency and prediction quality.
 
 ### Source Data
@@ -169,9 +178,8 @@ The dataset does not contain any personal or sensitive information.
 
 The purpose of this dataset is to help develop models that are energy efficient and make better use of the
 available resources. By understanding how modeling and training decisions can affect the final training energy
-efficiency
-of DL projects, we can reduce their carbon footprint. Moreover, by reducing the energy requirements of DL training,
-we make this task more affordable for limited budgets.
+efficiency of DL projects, we can reduce their carbon footprint. Moreover, by reducing the energy requirements of DL
+training, we make this task more affordable for limited budgets.
 
 ### Discussion of Biases
 
